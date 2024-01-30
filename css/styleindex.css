@@ -1,0 +1,482 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body{
+    background-color: #767479;
+
+}
+
+html{
+   scroll-behavior: smooth;
+   scroll-padding-top: 6rem;
+   overflow-x: hidden;
+   
+}
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: #191825;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+.bg{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg video{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.judul{
+    text-align: center;
+    color: white;
+}
+.judul-crud {
+    position: relative;
+    top: 20px;
+    margin-left: 45px;
+    color: white;
+}
+
+table{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    border: white;
+    background-color: white;
+}
+
+nav{
+    background-color: white;
+    position: relative;
+    bottom: 25px;
+    margin-left: 15rem;
+    padding: 20px;
+    width: 430px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+
+nav.active {
+    width: 10px; /* Ubah width menjadi 10px saat tidak aktif */
+    
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ubah width menjadi 100% saat aktif */
+    /* Remove or adjust the transform property here */
+}
+
+nav.active ul {
+    width: 0; /* Ubah width menjadi 0 saat tidak aktif */
+    /* Remove or adjust the transform property here */
+}
+
+nav ul li {
+    transform: rotate(0deg);
+    opacity: 1;
+    transition: opacity 5s linear; /* Adding transition for opacity */
+}
+
+nav.active ul li {
+    opacity: 0;
+    width: 0;
+    /* Remove or adjust the transform property here */
+}
+
+nav.active ul a {
+    opacity: 0;
+    pointer-events: none; /* Disable pointer events to make it unclickable */
+}
+
+nav ul a {
+    position: relative;
+    color: cyan;
+    text-decoration: none;
+    margin-left: 15px;
+    width: 0;
+    opacity: 1; 
+}
+
+nav ul a:hover {
+    color: red;
+    transition: 1s;
+}
+
+
+.icon {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    right: 14px;
+    height: 30px;
+    width: 30px;
+}
+
+.icon:focus {
+    outline: 0;
+}
+
+.icon .line {
+    background-color: black;
+    height: 2px;
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+    top: auto;
+    bottom: 10px;
+}
+
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+}
+
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    height: 50px;
+    background-color: gray;
+    margin-right: 15px;
+    border-radius: 50px;
+}
+
+.profile img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile h3 {
+    margin: 0;
+    color: white;
+}
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 80px;
+    right: 61px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: gray;
+}
+
+
+/* input */
+.box{
+    min-height: 400px;  
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    padding: 40px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    border-radius: 15px;
+    display: block;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #cf1d1d;
+}
+
+.box input{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #cf1d1d;
+    padding: 15px 20px;
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    
+}   
+
+
+.button{
+    display: block;
+    border-radius: 25px;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #f7316c;
+    outline: none;
+    border: none;;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+
+input[type="file"]::file-selector-button {
+    border: 1px solid white;
+    background-color: greenyellow;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.box .header-text {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.gambar-sebelumnya{
+    color: white;
+    position: relative;
+    bottom: 30px;
+}
+
+/* produknya */
+
+section.product{
+    padding: 6rem 11.5%;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    align-content: center;    
+}
+.product .kotak-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.product .kotak-container .kotak{
+    background-color: #fff;
+    flex:1 1 300px;
+    padding: 5px;
+    box-shadow: 0 .5rem 1.5rem rgba(    );
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    position: relative;
+    margin-top: 3rem;
+}
+.product .kotak-container .kotak .image{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}  
+.product .kotak-container .kotak:hover .image img{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.product .kotak-container .kotak .image .icons{
+    margin: 0;
+}
+.product .kotak-container .kotak .image .icons .btn{
+    font-size: 1.5rem;
+    margin: 1rem;
+    width: 80%;
+    background-color: greenyellow;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.product .kotak-container .kotak .content{
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.product .kotak-container .kotak .content h3{
+    font-size: 1.5rem;
+    color: black;
+}
+.product .kotak-container .kotak .content .price{
+    font-size: 1.5rem;
+    color: red;
+    font-weight: bold;      
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*detail*/
+
+
+
+/* footer */
+section.footer{
+    background-color: #191825;
+    padding: 50px;
+}
+.footer .kotak-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-left: 6rem;
+}
+.footer .kotak-container .kotak-footer{
+    flex: 1 1 20rem;   
+}
+.footer .kotak-container .kotak-footer h3{
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.footer .kotak-container .kotak-footer a{
+    display: block;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 0;
+    text-decoration: none;
+}
+.footer .kotak-container .kotak-footer a:hover{
+    color: red;
+    text-decoration: underline;
+}
+.footer .credit{
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: white;
+    border-top: .1rem solid rgba(255, 255, 255, 0.5 );
+}
+.footer .credit span{
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For screens smaller than 768px (e.g., smartphones) */
+@media (max-width: 768px) {
+    .product .kotak-container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    .product .kotak-container .kotak {
+        flex: 0 0 100%; /* Full width for each item */
+        margin-top: 2rem;
+    }
+}
+
+/* For screens between 768px and 991px (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .product .kotak-container .kotak {
+        flex: 0 0 calc(50% - 2.5rem); /* Two items per row with some spacing */
+        margin-top: 2rem;
+    }
+    .footer .kotak-container .kotak-footer{
+        flex: 1 1 15rem;   
+    }
+}
+
+/* For screens larger than 991px (e.g., desktops) */
+@media (min-width: 991px) {
+    .product .kotak-container .kotak {
+        flex: 0 0 calc(33.33% - 5rem); /* Three items per row with more spacing */
+        margin-top: 3rem;
+    }
+    .footer .kotak-container .kotak-footer{
+        flex: 1 1 19rem;   
+    }
+}
